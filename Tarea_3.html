@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cambio de color de fondo Arreglo</title>
+    <script type="text/javascript" charset="utf-8">
+	
+	var colores=["#FF0000", "#FF8000", "#D4FF00", "#55FF00", "#00FF2A", "#00FF80", "#00FFFF", "#00AAFF", "#0055FF", "#5500FF"];
+	
+	
+	function suma(v1,v2){
+	alert(v1*v2);
+	}
+	
+	function cambiaFondo(){
+		
+		aleatorio = Math.floor(Math.random() * colores.length);
+		document.body.style.backgroundColor = colores[aleatorio];
+	
+		
+	}
+	
+	</script>
+  </head>
+  <body>
+	<input type="button" value="cambiar fondo" onclick="cambiaFondo();"/>
+   	<script type="text/javascript">
+	//suma(5,5);
+	//cambiaFondo();
+	
+   	</script>
+  </body>
+</html>
