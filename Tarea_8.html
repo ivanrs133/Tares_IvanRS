@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cuadros For</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+		
+		<style type="text/css">
+		
+			/* http://meyerweb.com/eric/tools/css/reset/ 
+		   	v2.0 | 20110126
+		   	License: none (public domain)
+			*/
+
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure, 
+			footer, header, hgroup, menu, nav, section {
+				display: block;
+			}
+			body {
+				line-height: 1;
+				background:orange;
+			}
+			ol, ul {
+				list-style: none;
+			}
+			blockquote, q {
+				quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+			table {
+				border-collapse: collapse;
+				border-spacing: 10px;
+			}
+			
+			h1 {
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size:30px;
+				text-align:center;
+				margin:0 auto;
+
+			}
+			
+			#formulario{
+				height:100%;
+				width:130px;
+				margin-top:20px;	
+				margin-right:auto;
+				margin-left:auto;
+			}
+			
+			#campo {
+				border: 0;
+				height: 100px;
+				width: 100px;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 60px;
+				text-align: center;
+				background-color:#000;
+				color: #fff;
+				outline: none;
+				margin-right:auto;
+				margin-left:auto;
+			}
+			
+			#button {
+				width:100px;
+				border: 0px;
+				color: #fff;
+				background: #000;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 18px;
+				outline: none;
+				margin-top:20px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+			
+			#contendor{
+				width:100%;
+				margin-right:auto;
+				margin-left:auto;
+			}
+			
+			.cuadros {
+				width: 150px;
+				height: 150px;
+				float: left;
+				background: #000000;
+				margin-top: 20px;
+				padding:10px;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" charset="utf-8">
+		
+		</script>
+		
+	</head>
+
+	<body>
+		
+		<h1>Escribe el número deseado</h1>
+		
+		
+		<div id="formulario">
+			<input type="text" maxlength="2" name="campo" id="campo" onkeypress="return isNumberKey(event)">
+			<br>
+			<input type="button" name="button" id="button" value="Presiona" onClick="crarDivs()">
+		</div>
+		
+
+		<div id="contendor"></div>
+		
+		<script type="text/javascript" charset="utf-8">
+		
+	
+
+		function crarDivs(){
+			
+			var text="";
+		
+			usuario=document.getElementById("campo").value;
+		
+			for(i= 1; i<=usuario; i++){
+				x = Math.floor(Math.random() * colores.length);
+				jQuery('#contendor').append('<div class="cuadros" style="background:'+colores[x]+'"></div>')
+			};
+
+		  	$('.cuadros').click(function(env) {
+				$('.cuadros').fadeOut(500);
+			});
+		};
+		
+		</script>
+	</body>
+	
+</html>
