@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Funciones</title>
+		<style type="text/css" media="screen">
+			body{
+				background:	#EBFFF5;
+			}
+			#textoPais{
+				font-size: 100px;
+				text-align: center;
+				color:#2383f8;
+			}
+			
+			#botonpais{
+				width:150px;
+				height:60px;
+				background:grey;
+				padding:10px;
+				border:none;
+				margin:0 auto;
+				font-family:Courier;
+				color:white;
+				font-size:30px;
+			}
+			
+			#pais{
+				width:300px;
+				height:30px;
+				background:yellow;
+				padding:10px;
+				border:none;
+				margin:0 auto;
+				font-family:Courier;
+				color:grey;
+				font-size:15px;
+			}
+		</style>
+		<script type="text/javascript" charset="utf-8">
+			function suma(v1, v2){
+				alert(v1*v2);
+			};
+			
+			
+			var colores=["#808080", "#4C4C4C", "#993D99", "#6BB28F"];
+			
+			function cambiaFondo(){
+				aleatorio = Math.floor(Math.random()* colores.length);
+				document.body.style.backgroundColor= colores[aleatorio];
+
+			};
+			
+			function escribirPais(){
+				document.getElementById("textoPais").innerHTML= document.getElementById("pais").value;
+				innerHTMl = "Escribe dentro"
+			};
+</script>
+	</head>
+	
+<body>
+	
+	
+	<input id="botonpais" type="button" value="Ver" onclick="escribirPais()"/>
+	<input type="text" id="pais">
+		<div id="textoPais"></div>
+		
+	<script type="text/javascript" charset="utf-8"> 
+	document.getElementById("pais").value="Escribe un pais";
+	</script>
+</body>
+</html>
