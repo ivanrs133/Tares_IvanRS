@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+  <head>
+      <title>dos lados</title>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<style type="text/css" media="screen">
+	body{
+		margin:0;
+		padding:0;
+	}
+	#bloqueA{
+		background:red;
+		position:absolute;
+		height:100%;
+		width:50%;
+		left:0;
+		z-index:20;
+		
+		
+	}
+	#bloqueB{
+		background:black;
+		position:absolute;
+		left:50%;
+		height:100%;
+		width:50%;
+		
+	}
+	</style>
+	
+	
+  </head>
+  <body>
+	  
+	  <div id="bloqueA"><input type="button" id="izq" value="abrir-izquierda"/></div>
+	  	
+	  <div id="bloqueB"><input type="button" id="der" value="abrir-derecha"/></div>
+	  
+  	<script type="text/javascript">
+  		$("#izq").click(function(){
+			if($("#bloqueA").hasClass("mini")){
+				$("#bloqueA").animate({
+					width:"50%",
+					left:"0%",
+				});
+				
+				$("#bloqueA").removeClass("mini");
+			
+			
+			}else{
+				$("#bloqueA").animate({
+					width:"25%",
+					left:"75%",
+				});
+				$("#bloqueA").addClass("mini");
+		
+			}
+			
+  	});
+	
+
+
+	$("#derecha").click(function(){
+	
+		if($("#a").hasClass("clase1")){
+			$("#a").animate({ //
+				width:"50%",
+				left:"0%",
+		});
+		$("#a").removeClass("clase1");//agregamos una clase para poder hacer las dos funciones con un solo botón.
+			$("#b").animate({
+				left:"50%",
+			});
+			
+		}else{
+				$("#a").animate({
+				width:"25%",
+				left:"75%",
+			});
+			
+		$("#a").addClass("clase1");
+			$("#b").animate({
+				left:"100%",
+			});
+			}
+		
+	});
+	//botonderecha bloque B
+	
+	$("#izquierda").click(function(){
+	
+		if($("#b").hasClass("clase2")){
+			$("#b").animate({ //
+				width:"50%",
+				left:"50%",
+		});
+		$("#b").removeClass("clase2");//agregamos una clase para poder hacer las dos funciones con un solo botón.
+			$("#a").animate({
+				left:"0%",
+			});
+			
+		}else{
+				$("#b").animate({
+				width:"25%",
+				left:"0%",
+			});
+			
+		$("#b").addClass("clase2");
+			$("#a").animate({
+				left:"-50%",
+			});
+			}
+		
+	});
+
+</script>
+  	</script>
+  </body>
+  </html>
